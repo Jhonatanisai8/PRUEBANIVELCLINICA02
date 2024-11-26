@@ -104,6 +104,11 @@ public class frmAdministrarPersona extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblDatos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblDatosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblDatos);
 
         btnModifica.setText("Modificar");
@@ -181,6 +186,10 @@ public class frmAdministrarPersona extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tblDatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDatosMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblDatosMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
