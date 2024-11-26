@@ -55,5 +55,4 @@ public class Persona {
         return "Nombre=" + nombre + ", edad=" + edad + ", genero=" + genero + ", identificacion=" + identificacion + '}';
     }
 
-    
 }
