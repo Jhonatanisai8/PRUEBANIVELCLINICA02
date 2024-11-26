@@ -14,7 +14,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class ProcesosFormularioPersona {
-    
+
     public static void presentarFormulario(JDesktopPane escritorio, frmAdministrarPersona frmPersona) {
         escritorio.add(frmPersona);
         frmPersona.toFront();
@@ -22,7 +22,7 @@ public class ProcesosFormularioPersona {
         frmPersona.setVisible(true);
         mostrarPersonasEnTabla(frmPersona.tblDatos);
     }
-    
+
     public static Persona crearPersonaDesdeFormulario(frmAdministrarPersona frmPersona) {
         Persona miPersona = new Persona();
         miPersona.setNombre(frmPersona.txtNombre.getText());
@@ -31,7 +31,7 @@ public class ProcesosFormularioPersona {
         miPersona.setIdentificacion(frmPersona.txtIdentificacion.getText());
         return miPersona;
     }
-    
+
     public static void guardarPersonaEnArchivo(Persona persona) {
         try (BufferedWriter bf = new BufferedWriter(new FileWriter("personas.txt", true))) {
             String datosPersona = persona.getNombre() + "," + persona.getEdad() + "," + persona.getGenero() + "," + persona.getIdentificacion();
@@ -42,9 +42,9 @@ public class ProcesosFormularioPersona {
         } catch (Exception e) {
             Mensaje.M1("Error al guardar una persona en el archivo txt: \n" + e.getLocalizedMessage());
         }
-        
+
     }
-    
+
     private static List<String[]> leerPersonaDesdeArchivo(String nombreArchivo) {
         List<String[]> listaPersonas = new ArrayList<>();
         try (BufferedReader rd = new BufferedReader(new FileReader(nombreArchivo))) {
@@ -61,7 +61,7 @@ public class ProcesosFormularioPersona {
         }
         return listaPersonas;
     }
-    
+
     public static void mostrarPersonasEnTabla(JTable tblDatos) {
         String[] columnas = {"Nombre", "Edad", "Género", "Identificación"};
         DefaultTableModel miModelo = new DefaultTableModel(columnas, 0);
@@ -72,7 +72,7 @@ public class ProcesosFormularioPersona {
         }
         tblDatos.setModel(miModelo);
     }
-    
+
     public static void mostrarDatosPersonaCampos(frmAdministrarPersona frmAdministrarPersona) {
         int filaSelecionada = frmAdministrarPersona.tblDatos.getSelectedRow();
         if (filaSelecionada != -1) {
@@ -88,5 +88,19 @@ public class ProcesosFormularioPersona {
             frmAdministrarPersona.spnEdad.setValue(edad);
         }
     }
-    
+
+    public static void buscarPersonaPorNombre(frmAdministrarPersona frmAdministrarPersona, String nombre) {
+        DefaultTableModel miModelo = (DefaultTableModel) frmAdministrarPersona.tblDatos.getModel();
+        for (int i = 0; i < miModelo.getColumnCount(); i++) {
+            String nombrebuscado = (String) miModelo.getValueAt(i, 0);
+            if (nombrebuscado.toLowerCase().contains(nombre.toLowerCase())) {
+                //ponermos esa informoacin en los campos de texto 
+                frmAdministrarPersona.txtNombre.setText(String.valueOf(miModelo.getValueAt(i, 0)));
+                frmAdministrarPersona.spnEdad.setValue(Integer.valueOf(miModelo.getValueAt(i, 1).toString()));
+                frmAdministrarPersona.cbxGenero.setSelectedItem(String.valueOf(miModelo.getValueAt(i, 2)));
+                frmAdministrarPersona.txtIdentificacion.setText(String.valueOf(miModelo.getValueAt(i, 3)));
+            }
+        }
+    }
+
 }

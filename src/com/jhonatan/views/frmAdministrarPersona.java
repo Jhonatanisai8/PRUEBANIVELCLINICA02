@@ -49,6 +49,7 @@ public class frmAdministrarPersona extends javax.swing.JInternalFrame {
 
         txtIdentificacion.setBorder(javax.swing.BorderFactory.createTitledBorder("Identificacion:"));
 
+        spnEdad.setModel(new javax.swing.SpinnerNumberModel(0, 0, 80, 1));
         spnEdad.setBorder(javax.swing.BorderFactory.createTitledBorder("Edad:"));
 
         cbxGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
