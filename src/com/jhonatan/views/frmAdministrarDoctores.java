@@ -8,12 +8,12 @@ package com.jhonatan.views;
  *
  * @author User
  */
-public class frmAdministrarPacientes extends javax.swing.JInternalFrame {
+public class frmAdministrarDoctores extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form frmAdministrarPacientes
      */
-    public frmAdministrarPacientes() {
+    public frmAdministrarDoctores() {
         initComponents();
     }
 
@@ -33,6 +33,8 @@ public class frmAdministrarPacientes extends javax.swing.JInternalFrame {
         txtNombre1 = new javax.swing.JTextField();
         spnEdad = new javax.swing.JSpinner();
         cbxGenero = new javax.swing.JComboBox<>();
+        cbxEspecialidad = new javax.swing.JComboBox<>();
+        txtNumeroLicencia = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDatos = new javax.swing.JTable();
@@ -41,11 +43,11 @@ public class frmAdministrarPacientes extends javax.swing.JInternalFrame {
         btnBuscar = new javax.swing.JButton();
         txtBuscarNombre = new javax.swing.JTextField();
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos del Paciente:"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos del Doctor:"));
 
         btnGuardar.setText("Guardar");
 
-        txtNombre.setBorder(javax.swing.BorderFactory.createTitledBorder("Nombre  del Paciente:"));
+        txtNombre.setBorder(javax.swing.BorderFactory.createTitledBorder("Nombre  del Doctor:"));
 
         txtNombre1.setBorder(javax.swing.BorderFactory.createTitledBorder("Identificacion:"));
 
@@ -54,26 +56,38 @@ public class frmAdministrarPacientes extends javax.swing.JInternalFrame {
         cbxGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbxGenero.setBorder(javax.swing.BorderFactory.createTitledBorder("Género:"));
 
+        cbxEspecialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxEspecialidad.setBorder(javax.swing.BorderFactory.createTitledBorder("Especialidad:"));
+
+        txtNumeroLicencia.setBorder(javax.swing.BorderFactory.createTitledBorder("Nº de Licencia:"));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumeroLicencia, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addComponent(cbxEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(20, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(cbxGenero, 0, 211, Short.MAX_VALUE)
-                    .addComponent(spnEdad))
-                .addGap(72, 72, 72))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(cbxGenero, 0, 211, Short.MAX_VALUE)
+                            .addComponent(spnEdad))
+                        .addGap(72, 72, 72))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(82, 82, 82))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,12 +100,16 @@ public class frmAdministrarPacientes extends javax.swing.JInternalFrame {
                 .addComponent(cbxGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(txtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cbxEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtNumeroLicencia, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(16, 16, 16))
         );
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Registros De Pacientes:"));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Registros De Doctores:"));
 
         tblDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -188,6 +206,7 @@ public class frmAdministrarPacientes extends javax.swing.JInternalFrame {
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnGuardar;
     public javax.swing.JButton btnModifica;
+    public javax.swing.JComboBox<String> cbxEspecialidad;
     public javax.swing.JComboBox<String> cbxGenero;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanel2;
@@ -198,5 +217,6 @@ public class frmAdministrarPacientes extends javax.swing.JInternalFrame {
     public javax.swing.JTextField txtBuscarNombre;
     public javax.swing.JTextField txtNombre;
     public javax.swing.JTextField txtNombre1;
+    public javax.swing.JTextField txtNumeroLicencia;
     // End of variables declaration//GEN-END:variables
 }
