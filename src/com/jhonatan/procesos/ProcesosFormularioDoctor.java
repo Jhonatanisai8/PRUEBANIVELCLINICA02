@@ -91,7 +91,7 @@ public class ProcesosFormularioDoctor
 
     public static void buscarDoctorPorNombre(frmAdministrarDoctor frmAdministrarDoctor, String nombre) {
         DefaultTableModel miModelo = (DefaultTableModel) frmAdministrarDoctor.tblDatos.getModel();
-        for (int i = 0; i < miModelo.getColumnCount(); i++) {
+        for (int i = 0; i < miModelo.getRowCount(); i++) {
             String nombrebuscado = (String) miModelo.getValueAt(i, 0);
             if (nombrebuscado.toLowerCase().contains(nombre.toLowerCase())) {
                 //ponermos esa informoacin en los campos de texto 

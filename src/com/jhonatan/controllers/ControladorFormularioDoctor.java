@@ -1,6 +1,7 @@
 package com.jhonatan.controllers;
 
 import com.jhonatan.models.Doctor;
+import com.jhonatan.models.Mensaje;
 import com.jhonatan.procesos.ProcesosFormularioDoctor;
 import com.jhonatan.views.frmAdministrarDoctor;
 import com.jhonatan.views.frmMenu;
@@ -11,11 +12,11 @@ import java.awt.event.MouseListener;
 
 public class ControladorFormularioDoctor
         implements ActionListener, MouseListener {
-
+    
     private final frmAdministrarDoctor frmAdministrarDoctor;
     private final frmMenu frmenu;
     private Doctor miDoctor;
-
+    
     public ControladorFormularioDoctor(frmAdministrarDoctor frmAdministrarDoctor, frmMenu frmenu) {
         this.frmAdministrarDoctor = frmAdministrarDoctor;
         this.frmenu = frmenu;
@@ -27,7 +28,7 @@ public class ControladorFormularioDoctor
         this.frmAdministrarDoctor.tblDatos.addMouseListener(this);
         ProcesosFormularioDoctor.presentarFormulario(this.frmenu.dskEscritorio, this.frmAdministrarDoctor);
     }
-
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         //para el boton guardar 
@@ -38,8 +39,17 @@ public class ControladorFormularioDoctor
             ProcesosFormularioDoctor.limpiarCampos(this.frmAdministrarDoctor);
             System.out.println("Click sobre el boton guardar..");
         }
+        //para el boton buscar 
+        if (e.getSource() == this.frmAdministrarDoctor.btnBuscar) {
+            if (frmAdministrarDoctor.txtBuscarNombre.getText().isBlank()) {
+                Mensaje.M1("Por favor ingrese un nombre por el cual.");
+            } else {
+                ProcesosFormularioDoctor.buscarDoctorPorNombre(frmAdministrarDoctor, frmAdministrarDoctor.txtBuscarNombre.getText());
+            }
+            System.out.println("Click sobre el boton modificar..");
+        }
     }
-
+    
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getSource() == this.frmAdministrarDoctor.tblDatos) {
@@ -47,21 +57,21 @@ public class ControladorFormularioDoctor
             System.out.println("Has dado click sobre la tabla..");
         }
     }
-
+    
     @Override
     public void mousePressed(MouseEvent e) {
     }
-
+    
     @Override
     public void mouseReleased(MouseEvent e) {
     }
-
+    
     @Override
     public void mouseEntered(MouseEvent e) {
     }
-
+    
     @Override
     public void mouseExited(MouseEvent e) {
     }
-
+    
 }
