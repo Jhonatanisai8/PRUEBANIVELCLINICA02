@@ -207,6 +207,8 @@
                               <Component id="btnModifica" min="-2" pref="187" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="btnEliminar" min="-2" pref="187" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnDirigirmePacientes" min="-2" pref="187" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -233,6 +235,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnModifica" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                           <Component id="btnEliminar" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                          <Component id="btnDirigirmePacientes" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   </Group>
@@ -292,6 +295,14 @@
               </AuxValues>
             </Component>
             <Component class="javax.swing.JTextField" name="txtBuscarNombre">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnDirigirmePacientes">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Dirigirme a Pacientes"/>
+              </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>

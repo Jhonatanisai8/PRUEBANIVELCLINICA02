@@ -3,6 +3,7 @@ package com.jhonatan.controllers;
 import com.jhonatan.models.Mensaje;
 import com.jhonatan.models.Persona;
 import com.jhonatan.procesos.ProcesosFormularioPersona;
+import com.jhonatan.views.frmAdministrarPaciente;
 import com.jhonatan.views.frmAdministrarPersona;
 import com.jhonatan.views.frmMenu;
 import java.awt.event.ActionEvent;
@@ -22,6 +23,7 @@ public class ControladorFormularioPersona implements ActionListener, MouseListen
         this.frmAdministrarPersona.btnGuardar.addActionListener(this);
         this.frmAdministrarPersona.btnBuscar.addActionListener(this);
         this.frmAdministrarPersona.btnEliminar.addActionListener(this);
+        this.frmAdministrarPersona.btnDirigirmePacientes.addActionListener(this);
         this.frmAdministrarPersona.tblDatos.addMouseListener(this);
         ProcesosFormularioPersona.presentarFormulario(this.frmMenu.dskEscritorio, this.frmAdministrarPersona);
     }
@@ -52,6 +54,19 @@ public class ControladorFormularioPersona implements ActionListener, MouseListen
                 Mensaje.M1("Por favor seleccione una fila para poder eliminar. ");
             }
             System.out.println("Click sobre boton eliminar");
+        }
+        if (e.getSource() == this.frmAdministrarPersona.btnDirigirmePacientes) {
+            int fila = frmAdministrarPersona.tblDatos.getSelectedRow();
+            if (fila != -1) {
+                Persona personaEnviada = ProcesosFormularioPersona.crearPersonaDesdeFormulario(frmAdministrarPersona);
+                frmAdministrarPaciente frmAdministrarPaciente = new frmAdministrarPaciente(miPersona);
+                ControladorFormularioAdmPacientes admPacientes = new ControladorFormularioAdmPacientes(frmAdministrarPaciente, this.frmMenu, personaEnviada);
+                Mensaje.M1("Enviando a otro formulario Persona con Nombre: " + personaEnviada.getNombre());
+                this.frmAdministrarPersona.dispose();
+            } else {
+                Mensaje.M1("Por favor seleccione una fila para poder Dirigirse a Formulario Pacientes. ");
+            }
+            System.out.println("Click sobre el boton digirir a pacientes...");
         }
     }
 
