@@ -1,5 +1,6 @@
 package com.jhonatan.controllers;
 
+import com.jhonatan.models.Paciente;
 import com.jhonatan.models.Persona;
 import com.jhonatan.procesos.ProcesosFormularioPacientes;
 import com.jhonatan.views.frmAdministrarPaciente;
@@ -13,17 +14,28 @@ public class ControladorFormularioAdmPacientes
     private frmAdministrarPaciente frmAdministrarPaciente;
     private final frmMenu frmMenu;
     private Persona persona;
+    private Paciente paciente;
 
     public ControladorFormularioAdmPacientes(frmAdministrarPaciente frmAdministrarPaciente, frmMenu frmMenu, Persona miPersona) {
         this.frmAdministrarPaciente = frmAdministrarPaciente;
         this.frmMenu = frmMenu;
         this.persona = miPersona;
+        this.frmAdministrarPaciente.btnGuardar.addActionListener(this);
         ProcesosFormularioPacientes.presentarFormulario(this.frmMenu.dskEscritorio, this.frmAdministrarPaciente, this.persona);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if (e.getSource() == this.frmAdministrarPaciente.btnGuardar) {
+            this.paciente = new Paciente();
+            //establecemos los atributos 
+            this.paciente.setNombre(this.persona.getNombre());
+            this.paciente.setEdad(this.persona.getEdad());
+            this.paciente.setGenero(this.persona.getGenero());
+            this.paciente.setIdentificacion(this.persona.getIdentificacion());
+            ProcesosFormularioPacientes.leerDatosHistorial(frmAdministrarPaciente, this.paciente);
+            ProcesosFormularioPacientes.guardarHistorialEnArchivo(paciente, this.paciente.getHistorialMedico());
+        }
     }
 
 }

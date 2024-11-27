@@ -149,8 +149,8 @@ public class frmAdministrarPaciente extends javax.swing.JInternalFrame {
     public javax.swing.JLabel lblGenero;
     public javax.swing.JLabel lblIdentificacion;
     public javax.swing.JLabel lblNombre;
-    private javax.swing.JTextArea txtDescripcion;
-    private javax.swing.JTextArea txtHistorial;
+    public javax.swing.JTextArea txtDescripcion;
+    public javax.swing.JTextArea txtHistorial;
     public javax.swing.JTextField txtMotivo;
     // End of variables declaration//GEN-END:variables
 }

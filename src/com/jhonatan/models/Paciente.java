@@ -9,16 +9,24 @@ public class Paciente
     private HashMap<String, String> historialMedico;
 
     public Paciente() {
+        this.historialMedico = new HashMap<>();
     }
 
     public Paciente(String nombre, int edad, String genero, String identificacion) {
         super(nombre, edad, genero, identificacion);
-        this.historialMedico = new HashMap<>();
     }
 
     //metodo para agregar al historial 
     public void agregarHistorial(String motivo, String detalle) {
         this.historialMedico.put(motivo, detalle);
+    }
+
+    public HashMap<String, String> getHistorialMedico() {
+        return historialMedico;
+    }
+
+    public void setHistorialMedico(HashMap<String, String> historialMedico) {
+        this.historialMedico = historialMedico;
     }
 
 }
