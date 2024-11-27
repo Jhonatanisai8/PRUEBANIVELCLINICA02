@@ -24,7 +24,7 @@ public class frmAdministrarDoctorPacientes extends javax.swing.JInternalFrame {
         lblEspecialidad = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblDatos = new javax.swing.JTable();
         btnAsignar = new javax.swing.JButton();
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos del Doctor:"));
@@ -64,7 +64,7 @@ public class frmAdministrarDoctorPacientes extends javax.swing.JInternalFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Pacientes:"));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -75,7 +75,7 @@ public class frmAdministrarDoctorPacientes extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tblDatos);
 
         btnAsignar.setText("Asignar");
 
@@ -142,12 +142,12 @@ public class frmAdministrarDoctorPacientes extends javax.swing.JInternalFrame {
     public javax.swing.JPanel jPanel2;
     public javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
-    public javax.swing.JTable jTable1;
     public javax.swing.JLabel lblEdad;
     public javax.swing.JLabel lblEspecialidad;
     public javax.swing.JLabel lblGenero;
     public javax.swing.JLabel lblIdentificacion;
     public javax.swing.JLabel lblNombre;
     public javax.swing.JLabel lblNumeroLicencia;
+    public javax.swing.JTable tblDatos;
     // End of variables declaration//GEN-END:variables
 }
