@@ -4,6 +4,8 @@
  */
 package com.jhonatan.views;
 
+import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialLighterIJTheme;
+
 /**
  *
  * @author User
@@ -14,6 +16,7 @@ public class frmMenu extends javax.swing.JFrame {
      * Creates new form frmMenu
      */
     public frmMenu() {
+        FlatMaterialLighterIJTheme.setup();
         initComponents();
     }
 

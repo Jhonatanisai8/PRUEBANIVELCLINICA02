@@ -4,6 +4,8 @@
  */
 package com.jhonatan.views;
 
+import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialLighterIJTheme;
+
 /**
  *
  * @author User
@@ -14,6 +16,7 @@ public class frmAdministrarDoctores extends javax.swing.JInternalFrame {
      * Creates new form frmAdministrarPacientes
      */
     public frmAdministrarDoctores() {
+        FlatMaterialLighterIJTheme.setup();
         initComponents();
     }
 

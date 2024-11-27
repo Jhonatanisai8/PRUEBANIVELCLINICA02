@@ -1,5 +1,6 @@
 package com.jhonatan.procesos;
 
+import com.jhonatan.models.Constantes;
 import com.jhonatan.models.Mensaje;
 import com.jhonatan.models.Persona;
 import com.jhonatan.views.frmAdministrarPersona;
@@ -13,9 +14,18 @@ import javax.swing.JDesktopPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class ProcesosFormularioPersona {
+public class ProcesosFormularioPersona
+        implements Constantes {
+
+    public static void llenarCombo(frmAdministrarPersona frmAdministrarPersona) {
+        frmAdministrarPersona.cbxGenero.removeAllItems();
+        for (String string : GENEROS) {
+            frmAdministrarPersona.cbxGenero.addItem(string);
+        }
+    }
 
     public static void presentarFormulario(JDesktopPane escritorio, frmAdministrarPersona frmPersona) {
+        llenarCombo(frmPersona);
         escritorio.add(frmPersona);
         frmPersona.toFront();
         frmPersona.setTitle("Registro de Persona.");
@@ -103,4 +113,39 @@ public class ProcesosFormularioPersona {
         }
     }
 
+    public static void eliminarPersonaPorIdentificacion(frmAdministrarPersona frmAdministrarPersona, String identificacion) {
+        DefaultTableModel miModelo = (DefaultTableModel) frmAdministrarPersona.tblDatos.getModel();
+        boolean encontrado = false;
+        for (int i = 0; i < miModelo.getRowCount(); i++) {
+            String identificacionTabla = (String) miModelo.getValueAt(i, 3);
+            if (identificacionTabla.equalsIgnoreCase(identificacion)) {
+                miModelo.removeRow(i);
+                encontrado = true;
+                Mensaje.M1("Persona con Identificacion " + identificacion + " eliminada de la tabla.");
+                break;
+            }
+
+            if (encontrado) {
+
+            } else {
+                Mensaje.M1("No se encontro una persona con Identificacion: " + identificacion);
+            }
+        }
+    }
+
+    public static void actualizarArchivoTabla(frmAdministrarPersona frAdministrarPersona) {
+        try (BufferedWriter br = new BufferedWriter(new FileWriter("personas.txt", false))) {
+            DefaultTableModel miModelo = (DefaultTableModel) frAdministrarPersona.tblDatos.getModel();
+            for (int i = 0; i < miModelo.getRowCount(); i++) {
+                String nombre = (String) miModelo.getValueAt(i, 0);
+                int edad = Integer.parseInt(miModelo.getValueAt(i, 1).toString());
+                String genero = miModelo.getValueAt(i, 2).toString();
+                String identificacion = miModelo.getValueAt(i, 3).toString();
+                br.write(nombre + "," + edad + "," + genero + "," + identificacion);
+                br.newLine();
+            }
+        } catch (Exception e) {
+            Mensaje.M1("Error al actualizar el archivo txt de personas: " + e.getMessage());
+        }
+    }
 }
