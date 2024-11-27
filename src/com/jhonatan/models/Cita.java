@@ -70,7 +70,7 @@ public class Cita {
                 + "\n Especialidad: " + doctor.getEspecialidad()
                 + "\n Numero de Licencia: " + doctor.getNumeroLicencia()
                 + "\n Fecha: " + fecha
-                + " \nHora: " + hora
+                + " \nHora: " + hora.getHour() + ":" + hora.getMinute()
                 + "\n Motivo: " + motivo;
     }
 

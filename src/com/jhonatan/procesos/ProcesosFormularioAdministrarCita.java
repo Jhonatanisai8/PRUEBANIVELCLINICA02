@@ -4,6 +4,8 @@ import com.jhonatan.models.Cita;
 import com.jhonatan.models.Doctor;
 import com.jhonatan.models.Paciente;
 import com.jhonatan.views.frmAdministrarCita;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import javax.swing.JDesktopPane;
 
 public class ProcesosFormularioAdministrarCita {
@@ -39,6 +41,7 @@ public class ProcesosFormularioAdministrarCita {
             doctor.setNumeroLicencia(String.valueOf(frmCita.tblDoctores.getValueAt(filaDoctores, 5)));
             cita.setDoctor(doctor);
             cita.setDate(frmCita.jDateChooser1.getDate());
+            cita.setHora(LocalTime.now());
         }
         return cita;
     }
