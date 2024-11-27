@@ -98,7 +98,7 @@ public class ProcesosFormularioPersona
             frmAdministrarPersona.spnEdad.setValue(edad);
         }
     }
-
+    
     public static void buscarPersonaPorNombre(frmAdministrarPersona frmAdministrarPersona, String nombre) {
         DefaultTableModel miModelo = (DefaultTableModel) frmAdministrarPersona.tblDatos.getModel();
         for (int i = 0; i < miModelo.getColumnCount(); i++) {

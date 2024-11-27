@@ -1,5 +1,2 @@
-Hola Java,23,Item 3,2345hjo
-Hola  React,11,Item 2,12345
-Hola Mundo,4,Item 3,2345hjo
-Hola Kotlin,0,Masculino,AS23DD
-Juan Lopez,45,Masculino,A12345
+Luis Alberto Palacios,19,Masculino,A123456
+Pedro Lopez,34,Masculino,A123555
