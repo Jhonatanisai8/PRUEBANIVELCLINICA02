@@ -11,11 +11,11 @@ import java.awt.event.MouseListener;
 
 public class ControladorFormularioDoctor
         implements ActionListener, MouseListener {
-    
+
     private final frmAdministrarDoctor frmAdministrarDoctor;
     private final frmMenu frmenu;
     private Doctor miDoctor;
-    
+
     public ControladorFormularioDoctor(frmAdministrarDoctor frmAdministrarDoctor, frmMenu frmenu) {
         this.frmAdministrarDoctor = frmAdministrarDoctor;
         this.frmenu = frmenu;
@@ -27,7 +27,7 @@ public class ControladorFormularioDoctor
         this.frmAdministrarDoctor.tblDatos.addMouseListener(this);
         ProcesosFormularioDoctor.presentarFormulario(this.frmenu.dskEscritorio, this.frmAdministrarDoctor);
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
         //para el boton guardar 
@@ -39,25 +39,29 @@ public class ControladorFormularioDoctor
             System.out.println("Click sobre el boton guardar..");
         }
     }
-    
+
     @Override
     public void mouseClicked(MouseEvent e) {
+        if (e.getSource() == this.frmAdministrarDoctor.tblDatos) {
+            ProcesosFormularioDoctor.mostrarDatosDoctorCampos(this.frmAdministrarDoctor);
+            System.out.println("Has dado click sobre la tabla..");
+        }
     }
-    
+
     @Override
     public void mousePressed(MouseEvent e) {
     }
-    
+
     @Override
     public void mouseReleased(MouseEvent e) {
     }
-    
+
     @Override
     public void mouseEntered(MouseEvent e) {
     }
-    
+
     @Override
     public void mouseExited(MouseEvent e) {
     }
-    
+
 }

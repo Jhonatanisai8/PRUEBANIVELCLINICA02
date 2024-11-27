@@ -154,4 +154,25 @@ public class ProcesosFormularioDoctor
 
         frmAdministrarDoctor.txtNombre.requestFocus();
     }
+
+    public static void mostrarDatosDoctorCampos(frmAdministrarDoctor frmAdministrarDoctor) {
+        int filaSelecionada = frmAdministrarDoctor.tblDatos.getSelectedRow();
+        if (filaSelecionada != -1) {
+            String nombre = frmAdministrarDoctor.tblDatos.getValueAt(filaSelecionada, 0).toString();
+            int edad = Integer.parseInt(frmAdministrarDoctor.tblDatos.getValueAt(filaSelecionada, 1).toString());
+            String genero = frmAdministrarDoctor.tblDatos.getValueAt(filaSelecionada, 2).toString();
+            String identificacion = frmAdministrarDoctor.tblDatos.getValueAt(filaSelecionada, 3).toString();
+            String especialidad = frmAdministrarDoctor.tblDatos.getValueAt(filaSelecionada, 4).toString();
+            String numerolicencia = frmAdministrarDoctor.tblDatos.getValueAt(filaSelecionada, 5).toString();
+
+            //ponermos esa informoacin en los campos de texto 
+            frmAdministrarDoctor.txtNombre.setText(nombre);
+            frmAdministrarDoctor.txtIdentificacion.setText(identificacion);
+            frmAdministrarDoctor.cbxGenero.setSelectedItem(genero);
+            frmAdministrarDoctor.spnEdad.setValue(edad);
+            frmAdministrarDoctor.cbxEspecialidad.setSelectedItem(especialidad);
+            frmAdministrarDoctor.txtNumeroLicencia.setText(numerolicencia);
+
+        }
+    }
 }
