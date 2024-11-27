@@ -4,11 +4,13 @@ import com.jhonatan.models.Doctor;
 import com.jhonatan.models.Mensaje;
 import com.jhonatan.procesos.ProcesosFormularioDoctor;
 import com.jhonatan.views.frmAdministrarDoctor;
+import com.jhonatan.views.frmAdministrarDoctorPacientes;
 import com.jhonatan.views.frmMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.print.Doc;
 
 public class ControladorFormularioDoctor
         implements ActionListener, MouseListener {
@@ -60,6 +62,18 @@ public class ControladorFormularioDoctor
                 Mensaje.M1("Por favor seleccione una fila para poder eliminar. ");
             }
             System.out.println("Click sobre boton eliminar");
+        }
+        if (e.getSource() == this.frmAdministrarDoctor.btnDirigirmePacientes) {
+            int fila = frmAdministrarDoctor.tblDatos.getSelectedRow();
+            if (fila != -1) {
+                Doctor doctor = ProcesosFormularioDoctor.crearDoctorDesdeFormulario(frmAdministrarDoctor);
+                frmAdministrarDoctorPacientes frmAdministrarDoctorPacientes = new frmAdministrarDoctorPacientes(doctor);
+                ControladorAdmiPacientesDoctores capd = new ControladorAdmiPacientesDoctores(frmAdministrarDoctorPacientes, this.frmenu, doctor);
+                Mensaje.M1("Doctor con nombre: " + doctor.getNombre() + " enviado a otro problema.");
+            } else {
+                Mensaje.M1("Por favor seleccine una fila para poder dirigirse al formulario de asignacion de pacientes.");
+            }
+            System.out.println("Click sobre el boton que veo si un numero es impar");
         }
     }
 
