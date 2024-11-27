@@ -6,6 +6,7 @@ import com.jhonatan.procesos.ProcesosFormularioDoctor;
 import com.jhonatan.views.frmAdministrarDoctor;
 import com.jhonatan.views.frmAdministrarDoctorPacientes;
 import com.jhonatan.views.frmMenu;
+import com.jhonatan.views.frmVerAsignacionesPacientesDoctor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -74,6 +75,17 @@ public class ControladorFormularioDoctor
                 Mensaje.M1("Por favor seleccine una fila para poder dirigirse al formulario de asignacion de pacientes.");
             }
             System.out.println("Click sobre el boton que veo si un numero es impar");
+        }
+
+        if (e.getSource() == this.frmAdministrarDoctor.btnVerAsiganciones) {
+            int fila = frmAdministrarDoctor.tblDatos.getSelectedRow();
+            if (fila != -1) {
+                Doctor doctor = ProcesosFormularioDoctor.crearDoctorDesdeFormulario(frmAdministrarDoctor);
+                frmVerAsignacionesPacientesDoctor fr = new frmVerAsignacionesPacientesDoctor(doctor);
+                ControladorFormularioVerAsigacion cfva = new ControladorFormularioVerAsigacion(fr, this.frmenu, doctor);
+            } else {
+                Mensaje.M1("Por favor seleccine una fila para poder dirigirse al formulario de asignacion de pacientes.");
+            }
         }
     }
 
