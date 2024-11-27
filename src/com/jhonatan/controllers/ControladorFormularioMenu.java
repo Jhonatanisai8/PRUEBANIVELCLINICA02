@@ -1,6 +1,7 @@
 package com.jhonatan.controllers;
 
 import com.jhonatan.procesos.ProcesosFormularioMenu;
+import com.jhonatan.views.frmAdministrarCita;
 import com.jhonatan.views.frmAdministrarDoctor;
 import com.jhonatan.views.frmAdministrarPersona;
 import com.jhonatan.views.frmMenu;
@@ -16,6 +17,7 @@ public class ControladorFormularioMenu
         this.frmMenu = frmMenu;
         this.frmMenu.jmnAdmPersonas.addActionListener(this);
         this.frmMenu.jmnAdministrarDoc.addActionListener(this);
+        this.frmMenu.jmnAdmnCita.addActionListener(this);
         ProcesosFormularioMenu.presentarFormulario(this.frmMenu);
     }
 
@@ -30,6 +32,11 @@ public class ControladorFormularioMenu
             frmAdministrarDoctor frmAdministrarDoctor = new frmAdministrarDoctor();
             ControladorFormularioDoctor cfd = new ControladorFormularioDoctor(frmAdministrarDoctor, this.frmMenu);
             System.out.println("Has dado click sobre el menu de administrar doctores");
+        }
+
+        if (e.getSource() == this.frmMenu.jmnAdmnCita) {
+            frmAdministrarCita ac = new frmAdministrarCita();
+            ControladorFormularioCita cfc = new ControladorFormularioCita(ac, frmMenu);
         }
     }
 
