@@ -17,13 +17,13 @@ public class ControladorFormularioCita
     public ControladorFormularioCita(frmAdministrarCita frmAdministrarCita, frmMenu frmMenu) {
         this.frmAdministrarCita = frmAdministrarCita;
         this.frmMenu = frmMenu;
-        this.frmAdministrarCita.btnEliminar.addActionListener(this);
+        this.frmAdministrarCita.btnRegistrar.addActionListener(this);
         ProcesosFormularioAdministrarCita.presentarFormulario(this.frmMenu.dskEscritorio, this.frmAdministrarCita);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == this.frmAdministrarCita.btnEliminar) {
+        if (e.getSource() == this.frmAdministrarCita.btnRegistrar) {
             cita = ProcesosFormularioAdministrarCita.crearCitaDesdeFormulario(frmAdministrarCita);
 
             frmAdministrarCita.txtInformacion.append(cita.toString());

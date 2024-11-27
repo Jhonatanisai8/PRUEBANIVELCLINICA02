@@ -164,9 +164,9 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="btnVerAsiganciones" min="-2" pref="187" max="-2" attributes="0"/>
+                              <Component id="btnVerCitas" min="-2" pref="187" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnEliminar" min="-2" pref="187" max="-2" attributes="0"/>
+                              <Component id="btnRegistrar" min="-2" pref="187" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -190,8 +190,8 @@
                       <Component id="jScrollPane2" min="-2" pref="207" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnVerAsiganciones" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                          <Component id="btnEliminar" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                          <Component id="btnVerCitas" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                          <Component id="btnRegistrar" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   </Group>
@@ -226,17 +226,17 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="btnVerAsiganciones">
+            <Component class="javax.swing.JButton" name="btnVerCitas">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ver Asignaciones"/>
+                <Property name="text" type="java.lang.String" value="Ver citas"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JButton" name="btnEliminar">
+            <Component class="javax.swing.JButton" name="btnRegistrar">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Eliminar"/>
+                <Property name="text" type="java.lang.String" value="Registrar Cita"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

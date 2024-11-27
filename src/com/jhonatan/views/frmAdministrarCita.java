@@ -19,8 +19,8 @@ public class frmAdministrarCita extends javax.swing.JInternalFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPacientes = new javax.swing.JTable();
-        btnVerAsiganciones = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
+        btnVerCitas = new javax.swing.JButton();
+        btnRegistrar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblDoctores = new javax.swing.JTable();
 
@@ -85,9 +85,9 @@ public class frmAdministrarCita extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tblPacientes);
 
-        btnVerAsiganciones.setText("Ver Asignaciones");
+        btnVerCitas.setText("Ver citas");
 
-        btnEliminar.setText("Eliminar");
+        btnRegistrar.setText("Registrar Cita");
 
         tblDoctores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -115,9 +115,9 @@ public class frmAdministrarCita extends javax.swing.JInternalFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(btnVerAsiganciones, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnVerCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
@@ -135,8 +135,8 @@ public class frmAdministrarCita extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnVerAsiganciones, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnVerCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15))
         );
 
@@ -189,8 +189,8 @@ public class frmAdministrarCita extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnEliminar;
-    public javax.swing.JButton btnVerAsiganciones;
+    public javax.swing.JButton btnRegistrar;
+    public javax.swing.JButton btnVerCitas;
     public com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanel2;
