@@ -59,8 +59,11 @@ public class frmAdministrarPaciente extends javax.swing.JInternalFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Historial Medico;"));
 
+        txtMotivo.setBorder(javax.swing.BorderFactory.createTitledBorder("Motivo:"));
+
         txtDescripcion.setColumns(20);
         txtDescripcion.setRows(5);
+        txtDescripcion.setBorder(javax.swing.BorderFactory.createTitledBorder("Detalle:"));
         jScrollPane1.setViewportView(txtDescripcion);
 
         txtHistorial.setColumns(20);
