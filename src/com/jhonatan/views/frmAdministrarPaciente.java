@@ -64,6 +64,7 @@ public class frmAdministrarPaciente extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(txtDescripcion);
 
         txtHistorial.setColumns(20);
+        txtHistorial.setForeground(new java.awt.Color(0, 0, 0));
         txtHistorial.setRows(5);
         jScrollPane2.setViewportView(txtHistorial);
 

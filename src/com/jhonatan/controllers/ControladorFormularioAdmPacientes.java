@@ -22,6 +22,8 @@ public class ControladorFormularioAdmPacientes
         this.persona = miPersona;
         this.frmAdministrarPaciente.btnGuardar.addActionListener(this);
         ProcesosFormularioPacientes.presentarFormulario(this.frmMenu.dskEscritorio, this.frmAdministrarPaciente, this.persona);
+        ProcesosFormularioPacientes.mostrarHistorialPaciente(this.frmAdministrarPaciente, this.persona.getNombre());
+
     }
 
     @Override
@@ -35,6 +37,7 @@ public class ControladorFormularioAdmPacientes
             this.paciente.setIdentificacion(this.persona.getIdentificacion());
             ProcesosFormularioPacientes.leerDatosHistorial(frmAdministrarPaciente, this.paciente);
             ProcesosFormularioPacientes.guardarHistorialEnArchivo(paciente, this.paciente.getHistorialMedico());
+            ProcesosFormularioPacientes.mostrarHistorialPaciente(this.frmAdministrarPaciente, this.paciente.getNombre());
         }
     }
 

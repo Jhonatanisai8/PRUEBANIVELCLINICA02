@@ -1,2 +1,5 @@
 Gripe:Gripe moderada con un poco de fiebre
 Dolor de Cabeza:Dolor de cabeza intenso 
+Dolor de Espalda:Dolor de espalda
+Dolor de Barriga:Fatiga de estudio
+Malestar de Cuerpo:Estuvo mal unos dias
