@@ -62,7 +62,7 @@ public class Cita {
                 + "\n Edad: " + paciente.getEdad()
                 + "\n Genero: " + paciente.getGenero()
                 + "\n Identificacion: " + paciente.getIdentificacion()
-                + "=DATOS DEL DOCTOR="
+                + "\n=DATOS DEL DOCTOR="
                 + "\n Nombre Paciente: " + doctor.getNombre()
                 + "\n Edad: " + doctor.getEdad()
                 + "\n Genero: " + doctor.getGenero()
