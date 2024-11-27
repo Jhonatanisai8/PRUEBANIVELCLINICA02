@@ -25,7 +25,7 @@ public class ControladorFormularioDoctor
         this.frmAdministrarDoctor.btnGuardar.addActionListener(this);
         this.frmAdministrarDoctor.btnDirigirmePacientes.addActionListener(this);
         this.frmAdministrarDoctor.btnEliminar.addActionListener(this);
-        this.frmAdministrarDoctor.btnModifica.addActionListener(this);
+        this.frmAdministrarDoctor.btnVerAsiganciones.addActionListener(this);
         this.frmAdministrarDoctor.btnBuscar.addActionListener(this);
         this.frmAdministrarDoctor.tblDatos.addMouseListener(this);
         ProcesosFormularioDoctor.presentarFormulario(this.frmenu.dskEscritorio, this.frmAdministrarDoctor);
