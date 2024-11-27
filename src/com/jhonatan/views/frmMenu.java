@@ -34,7 +34,7 @@ public class frmMenu extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jmnAdmPersonas = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jmnAdministrarDoc = new javax.swing.JMenu();
+        jmnAdministrarDoc = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,7 +58,7 @@ public class frmMenu extends javax.swing.JFrame {
 
         jMenu2.setText("Doctores");
 
-        jmnAdministrarDoc.setText("Administrar Doctores");
+        jmnAdministrarDoc.setText("Admistrar Doctores");
         jMenu2.add(jmnAdministrarDoc);
 
         jMenuBar1.add(jMenu2);
@@ -120,6 +120,6 @@ public class frmMenu extends javax.swing.JFrame {
     public javax.swing.JMenu jMenu2;
     public javax.swing.JMenuBar jMenuBar1;
     public javax.swing.JMenuItem jmnAdmPersonas;
-    public javax.swing.JMenu jmnAdministrarDoc;
+    public javax.swing.JMenuItem jmnAdministrarDoc;
     // End of variables declaration//GEN-END:variables
 }

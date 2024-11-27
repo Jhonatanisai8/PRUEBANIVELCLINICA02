@@ -35,6 +35,7 @@ public class ProcesosFormularioDoctor
         frmAdministrarDocto.toFront();
         frmAdministrarDocto.setTitle("Registro de Doctores.");
         frmAdministrarDocto.setVisible(true);
+        mostrarDoctoresEnTabla(frmAdministrarDocto.tblDatos);
     }
 
     public static Doctor crearDoctorDesdeFormulario(frmAdministrarDoctor frmAdministrarDoctor1) {
@@ -141,5 +142,16 @@ public class ProcesosFormularioDoctor
         } catch (Exception e) {
             Mensaje.M1("Error al actualizar el archivo txt de doctores: " + e.getMessage());
         }
+    }
+
+    public static void limpiarCampos(frmAdministrarDoctor frmAdministrarDoctor) {
+        frmAdministrarDoctor.txtIdentificacion.setText("");
+        frmAdministrarDoctor.txtNombre.setText("");
+        frmAdministrarDoctor.txtNumeroLicencia.setText("");
+        frmAdministrarDoctor.cbxEspecialidad.setSelectedIndex(0);
+        frmAdministrarDoctor.cbxEspecialidad.setSelectedIndex(1);
+        frmAdministrarDoctor.spnEdad.setValue(0);
+
+        frmAdministrarDoctor.txtNombre.requestFocus();
     }
 }

@@ -33,14 +33,14 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
           <SubComponents>
-            <Menu class="javax.swing.JMenu" name="jmnAdministrarDoc">
+            <MenuItem class="javax.swing.JMenuItem" name="jmnAdministrarDoc">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Administrar Doctores"/>
+                <Property name="text" type="java.lang.String" value="Admistrar Doctores"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
-            </Menu>
+            </MenuItem>
           </SubComponents>
         </Menu>
       </SubComponents>
