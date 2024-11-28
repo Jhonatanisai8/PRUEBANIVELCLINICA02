@@ -1,0 +1,2 @@
+David Lopez,23,Masculino,A124
+Walter Rios,23,Masculino,A125

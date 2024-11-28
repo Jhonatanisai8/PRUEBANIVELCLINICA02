@@ -16,7 +16,7 @@ import javax.swing.JDesktopPane;
 import javax.swing.table.DefaultTableModel;
 
 public class ProcesosFormularioAdministrarCita {
-    
+
     public static void presentarFormulario(JDesktopPane escritorio, frmAdministrarCita frmAdministrarCita) {
         escritorio.add(frmAdministrarCita);
         frmAdministrarCita.toFront();
@@ -25,7 +25,7 @@ public class ProcesosFormularioAdministrarCita {
         ProcesosFormularioPersona.mostrarPersonasEnTabla(frmAdministrarCita.tblPacientes);
         ProcesosFormularioDoctor.mostrarDoctoresEnTabla(frmAdministrarCita.tblDoctores);
     }
-    
+
     public static Cita crearCitaDesdeFormulario(frmAdministrarCita frmCita) {
         Cita cita = new Cita();
         int filaPaciente = frmCita.tblPacientes.getSelectedRow();
@@ -39,7 +39,7 @@ public class ProcesosFormularioAdministrarCita {
             paciente.setGenero(String.valueOf(frmCita.tblPacientes.getValueAt(filaPaciente, 2)));
             paciente.setIdentificacion(String.valueOf(frmCita.tblPacientes.getValueAt(filaPaciente, 3)));
             cita.setPaciente(paciente);
-            
+
             doctor.setNombre(String.valueOf(frmCita.tblDoctores.getValueAt(filaDoctores, 0)));
             doctor.setEdad(Integer.parseInt(frmCita.tblDoctores.getValueAt(filaDoctores, 1).toString()));
             doctor.setGenero(String.valueOf(frmCita.tblDoctores.getValueAt(filaDoctores, 2)));
@@ -52,7 +52,7 @@ public class ProcesosFormularioAdministrarCita {
         }
         return cita;
     }
-    
+
     public static void guardarCitaEnArchivo(Cita cita) {
         String nombreArchivo = "citas.txt";
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo, true))) {
@@ -74,7 +74,7 @@ public class ProcesosFormularioAdministrarCita {
             System.out.println("Error al guardar la cita en el archivo: " + e.getMessage());
         }
     }
-    
+
     public static void mostrarCitasEnTabla(javax.swing.JTable tblCitas) {
         String nombreArchivo = "citas.txt";
         DefaultTableModel modelo = (DefaultTableModel) tblCitas.getModel();
@@ -115,5 +115,5 @@ public class ProcesosFormularioAdministrarCita {
             System.out.println("Error al leer el archivo de citas: " + e.getMessage());
         }
     }
-    
+
 }

@@ -1,1 +1,4 @@
-Carlos Daniel,33,Masculino,343453232,Dermatología,123123
+Anibal Palacios,12,Masculino,F2342,Oncología,234567987
+Alonso Rivas,45,Masculino,F54644,Endocrinología,12345789
+Juan Castillo,34,Masculino,C4354,Urología,3123
+Daniel Sanchez,25,Masculino,D4444,Neurología,43211234

@@ -1,7 +1,5 @@
-Juan Lopez,56,Masculino,A123
 David Lopez,23,Masculino,A124
 Walter Rios,23,Masculino,A125
 Tomas Medina,23,Masculino,A432
 Pedro Palacios,23,Masculino,F89897
 Luciana Lopez,23,Femenino,F89892
-Yicson,23,Masculino,D09909

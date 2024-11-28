@@ -1,0 +1,5 @@
+Tomas Medina,23,Masculino,A432
+Walter Rios,23,Masculino,A125
+David Lopez,23,Masculino,A124
+Luciana Lopez,23,Femenino,F89892
+Pedro Palacios,23,Masculino,F89897

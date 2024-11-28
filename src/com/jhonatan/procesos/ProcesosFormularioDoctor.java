@@ -118,9 +118,9 @@ public class ProcesosFormularioDoctor
             }
 
             if (encontrado) {
-                System.out.println("El archivo TXT ha sido actualizado.");
+                actualizarArchivoTabla(frmAdministrarDoctor);
             } else {
-                Mensaje.M1("No se encontro un doctoe  con Identificacion: " + identificacion);
+                Mensaje.M1("No se encontro un doctor  con Identificacion: " + identificacion);
             }
         }
     }
